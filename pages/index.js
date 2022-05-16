@@ -1,23 +1,19 @@
 import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Link from "next/link";
+import utilStyles from '../styles/utils.module.css';
+import Layout from "@components/Layout";
 
 export default function Home() {
-  return (
-    <div className="container">
-      <Head>
-        <title>Next.js Starter!</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-      </main>
-
-      <Footer />
-    </div>
-  )
+    return (
+        <Layout home>
+            <Head>
+                <title>Next.js Starter!</title>
+                <link rel="icon" href="/favicon.ico"/>
+            </Head>
+            <section className={utilStyles.headingMd}>
+                <p>Check out these articles:</p>
+                <Link href="/posts/first-post"><a>First post</a></Link>
+            </section>
+        </Layout>
+    )
 }
